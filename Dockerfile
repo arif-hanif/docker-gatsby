@@ -1,5 +1,5 @@
 FROM mhart/alpine-node:6
-RUN apk add --no-cache git-all
+RUN apk add --no-cache git
 RUN npm install -g gatsby@1.0.0-alpha12-alpha.d7d6ef64
 
 ENV LC_ALL=C.UTF-8 \
