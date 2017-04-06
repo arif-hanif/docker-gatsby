@@ -1,11 +1,5 @@
-FROM debian:jessie
-
-RUN apt-get update && apt-get install -y \
-    curl \
-    && curl -sL https://deb.nodesource.com/setup_6.x | bash /dev/stdin \
-    && apt-get install -y nodejs git-all nasm build-essential autoconf \
-    && rm -rf /var/lib/apt/lists/*
-
+FROM mhart/alpine-node:6
+RUN apk add --no-cache make gcc g++ python
 RUN npm install -g gatsby@1.0.0-alpha12-alpha.d7d6ef64
 
 ENV LC_ALL=C.UTF-8 \
